@@ -10,3 +10,15 @@ export type Task = {
   actualHours?: number;
   dueDate?: string;
 };
+
+export type CreateTaskInput = {
+  title: string;
+  description: string;
+  status: "todo" | "in_progress" | "review" | "done";
+  priority: "low" | "medium" | "high";
+  assignedTo: string;
+  estimatedHours: number;
+  actualHours?: number;
+  dueDate: string;
+};
+

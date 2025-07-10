@@ -5,7 +5,7 @@ import {
   updateTask,
   deleteTask,
 } from "@/services/taskService";
-import { Task } from "@/types/task";
+import { CreateTaskInput, Task } from "@/types/task";
 import TaskModal from "./TaskModal";
 import ConfirmModal from "../common/ConfirmModal";
 
@@ -51,7 +51,7 @@ export default function TaskBoard({ projectId }: Props) {
     setShowModal(true);
   };
 
-  const handleSave = async (taskData: Partial<Task>) => {
+  const handleSave = async (taskData: CreateTaskInput) => {
     try {
       if (editMode && selectedTask) {
         const updated = await updateTask(selectedTask.id, taskData);
@@ -134,6 +134,7 @@ export default function TaskBoard({ projectId }: Props) {
       {showModal && (
         <TaskModal
           task={selectedTask}
+          projectId={projectId}
           onClose={() => setShowModal(false)}
           onSave={handleSave}
         />

@@ -1,4 +1,4 @@
-import { Task } from "@/types/task";
+import { CreateTaskInput } from "@/types/task";
 import { getToken } from "@/utils/auth";
 
 const API_URL = "http://localhost:8000";
@@ -13,7 +13,7 @@ export const fetchTasksByProject = async (projectId: string) => {
   return await res.json();
 };
 
-export const createTask = async (projectId: string, task: Task) => {
+export const createTask = async (projectId: string, task: CreateTaskInput) => {
   const res = await fetch(`${API_URL}/projects/${projectId}/tasks`, {
     method: "POST",
     headers: {

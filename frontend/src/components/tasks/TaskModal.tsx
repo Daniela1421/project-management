@@ -1,27 +1,29 @@
 import { useState, useEffect } from "react";
-import { Task } from "@/types/task";
+import { CreateTaskInput, Task } from "@/types/task";
 
-type Props = {
-  task?: Task;
-  onClose: () => void;
-  onSave: (form: Partial<Task> & { projectId: string }) => void;
-  projectId: string;
-};
-
-const initialForm = {
+const initialForm: CreateTaskInput = {
   title: "",
   description: "",
   status: "todo",
   priority: "medium",
-  projectId: "", 
   estimatedHours: 0,
   actualHours: 0,
-  assignedTo: "cf8277f0-1c65-4018-9672-a7e25b2387da",
+  assignedTo: "",
   dueDate: "",
 };
 
+type FormType = typeof initialForm;
+
+type Props = {
+  task?: Task | null;
+  onClose: () => void;
+  onSave: (form: FormType) => void;
+  projectId: string;
+};
+
+
 export default function TaskModal({ task, onClose, onSave, projectId }: Props) {
-  const [form, setForm] = useState<typeof initialForm>(initialForm);
+  const [form, setForm] = useState<CreateTaskInput>(initialForm);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -31,7 +33,7 @@ export default function TaskModal({ task, onClose, onSave, projectId }: Props) {
         description: task.description || "",
         status: task.status,
         priority: task.priority,
-        projectId: projectId,
+        // projectId: projectId,
         estimatedHours: task.estimatedHours || 0,
         actualHours: task.actualHours || 0,
         assignedTo: "cf8277f0-1c65-4018-9672-a7e25b2387da",
@@ -68,7 +70,7 @@ export default function TaskModal({ task, onClose, onSave, projectId }: Props) {
 
     onSave({
       ...form,
-      projectId,
+      // projectId,
     });
     onClose();
   };
