@@ -9,9 +9,9 @@ export default function TaskCard({ task }: Props) {
     <div className="bg-white p-3 rounded shadow hover:shadow-md transition">
       <h4 className="font-medium">{task.title}</h4>
       <p className="text-sm text-gray-600">{task.priority.toUpperCase()}</p>
-      <p className="text-xs text-gray-400">
+      {/* <p className="text-xs text-gray-400">
         Asignado: {task.assignedTo?.email || "No asignado"}
-      </p>
+      </p> */}
     </div>
   );
 }
