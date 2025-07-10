@@ -6,9 +6,17 @@ import { useEffect, useState } from "react";
 import { fetchProjects, fetchTasks } from "@/services/dashboardService";
 import { useAuth } from "@/context/AuthContext";
 
+type SimpleTask = {
+  id: string;
+  title: string;
+  status: string;
+  priority: string;
+};
+
+
 export default function DashboardPage() {
   const [projects, setProjects] = useState([]);
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState<SimpleTask[]>([]);
   const { user } = useAuth();
 
   useEffect(() => {
@@ -28,7 +36,7 @@ export default function DashboardPage() {
     <DashboardLayout>
       <h2 className="text-2xl font-bold mb-6">Dashboard</h2>
       <SummaryCards projects={projects} tasks={tasks} />
-      <TasksChart tasks={tasks} />
+      <TasksChart />
       <NotificationsList tasks={tasks} />
     </DashboardLayout>
   );
