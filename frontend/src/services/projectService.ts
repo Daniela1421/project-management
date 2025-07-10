@@ -1,3 +1,4 @@
+import { Project } from "@/types/project";
 import { getToken } from "@/utils/auth";
 
 const API_URL = "http://localhost:8000";
