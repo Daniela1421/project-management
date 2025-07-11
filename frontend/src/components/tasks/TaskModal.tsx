@@ -8,7 +8,7 @@ const initialForm: CreateTaskInput = {
   priority: "medium",
   estimatedHours: 0,
   actualHours: 0,
-  assignedTo: "",
+  assignedTo: "cf8277f0-1c65-4018-9672-a7e25b2387da",
   dueDate: "",
 };
 

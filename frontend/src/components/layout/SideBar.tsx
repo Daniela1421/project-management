@@ -9,7 +9,6 @@ const Sidebar = () => {
   const links = [
     { href: "/dashboard", label: "Dashboard" },
     { href: "/projects", label: "Proyectos" },
-    { href: "/tasks", label: "Tareas" },
   ];
 
   if (user?.role === "admin" || user?.role === "manager") {
