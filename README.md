@@ -6,9 +6,9 @@ Aplicación web para la gestión de proyectos y tareas con control de usuarios p
 
 - **Frontend:** Next.js + Tailwind CSS
 - **Backend:** FastAPI
-- **Base de Datos:** PostgreSQL (Railway)
+- **Base de Datos:** PostgreSQL
 - **Autenticación:** JWT
-- **Despliegue:** Vercel + Railway
+- **Despliegue:** Vercel
 
 ---
 
@@ -43,15 +43,6 @@ Aplicación web para la gestión de proyectos y tareas con control de usuarios p
 | `/projects/[id]/tasks` | Tareas del proyecto en vista Kanban |
 
 ---
-
-## 🛠️ Instalación local
-
-1. Clona el repositorio:
-
-``
-git clone https://github.com/tuusuario/nombre-del-repo.git
-cd nombre-del-repo
-``
 
 ## ⚙️ Backend
 
